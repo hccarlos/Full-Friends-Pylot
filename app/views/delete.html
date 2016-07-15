@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Friends - Delete</title>
+	<meta charset="utf-8">
+</head>
+<body>
+    <p>Confirm Delete:(Y/N)</p>
+    <form action="/friends/delete_from_list/{{one_friend['id']}}" method="post">
+		<input type="submit" value="YES">
+    </form>
+    <form action="/friends/go_back" method="get">
+        <input type="submit" value="NO">
+    </form>
+</body>
+</html>

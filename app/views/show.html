@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Friends - Edit</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>ID: {{ one_friend['id'] }}</p>
+    <p>First Name: {{ one_friend['first_name'] }}</p>
+    <p>Last Name: {{ one_friend['last_name'] }}</p>
+    <p>Email: {{ one_friend['email'] }}</p>
+    <p>Created On: {{ one_friend['created_at'] }}</p>
+    <hr>
+    <form action="/friends/go_back" method="get">
+        <input type="submit" value="Return">
+    </form>
+</body>
+</html>

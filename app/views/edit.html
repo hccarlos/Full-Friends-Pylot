@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Friends - Edit</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>ID: {{ one_friend['id'] }}</p>
+    <p>First Name: {{ one_friend['first_name'] }}</p>
+    <p>Last Name: {{ one_friend['last_name'] }}</p>
+    <p>Email: {{ one_friend['email'] }}</p>
+    <p>Created On: {{ one_friend['created_at'] }}</p>
+    <hr>
+    <h3>update user info here</h3>
+    <form action="/friends/edit_to_list/{{one_friend['id']}}" method="post">
+        <label for="first_name">
+            First Name:<input type="text" name="first_name" id="first_name" value="{{one_friend['first_name']}}">
+        </label>
+        <label for="last_name">
+            Last Name:<input type="text" name="last_name" id="last_name" value="{{one_friend['last_name']}}">
+        </label>
+        <label for="email">
+            Email:<input type="text" name="email" id="email" value="{{one_friend['email']}}">
+        </label>
+		<input type="submit" value="Submit Edits">
+    </form>
+</body>
+</html>

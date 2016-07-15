@@ -1,8 +1,34 @@
 <html>
   <head>
+  	<title>Full Friends - Main Page</title>
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+        <h1>These are all my friends!</h1>
+        <form action="/friends/add" method="post">
+        	First Name: <input type="text" name="fname">
+        	Last Name: <input type="text" name="lname">
+        	Email: <input type="text" name="email">
+        	<input type="submit" value="Add">
+        </form>
+
+	    {% for friend in all_friends: %}
+	        <p>ID: {{ friend['id'] }}</p>
+	        <p>First Name: {{ friend['first_name'] }}</p>
+	        <p>Last Name: {{ friend['last_name'] }}</p>
+	        <p>Email: {{ friend['email'] }}</p>
+	        <p>Created On: {{ friend['created_at'] }}</p>
+	        <form action="/friends/edit/{{friend['id']}}" method="get">
+	        	<input type="submit" value="Edit">
+	        </form>
+	        <form action="/friends/show/{{friend['id']}}" method="get">
+	        	<input type="submit" value="Show Profile">
+	        </form>
+	        <form action="/friends/delete/{{friend['id']}}" method="get">
+	        	<input type="submit" value="Delete">
+	        </form>
+	        <hr>
+	    {% endfor %}
+
   </body>
 </html>
